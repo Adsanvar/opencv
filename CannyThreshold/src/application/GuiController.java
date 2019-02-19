@@ -26,7 +26,8 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
 public class GuiController {
-
+	 static{System.loadLibrary(Core.NATIVE_LIBRARY_NAME);}
+	 
 	// FXML buttons
 		@FXML
 		private Button cameraButton;
@@ -58,8 +59,12 @@ public class GuiController {
 
 		protected void init()
 		{
+			// set a fixed width for the frame
+			originalFrame.setFitWidth(600);
+			// preserve image ratio
+			originalFrame.setPreserveRatio(true);
 			this.threshold.setShowTickLabels(true);
-
+			this.capture = new VideoCapture();
 		}
 
 		/**
@@ -85,7 +90,7 @@ public class GuiController {
 				// disable setting checkboxes
 				this.canny.setDisable(true);
 				this.dilateErode.setDisable(true);
-				capture = new VideoCapture();
+			
 				// start the video capture
 				this.capture.open(0);
 
