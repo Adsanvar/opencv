@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="application.GuiController">
+  <!-- TODO Add Nodes -->
+  <bottom>
+    <Button fx:id="cameraButton" alignment="center" text="Start Camera" onAction="#startCamera" disable="true" />
+  </bottom>
+  <center>
+    <ImageView fx:id="orginalFrame" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
+  </center>
+  <top>
+    <VBox prefHeight="200.0" prefWidth="100.0">
+      <children>
+        <HBox prefHeight="100.0" prefWidth="200.0">
+          <children>
+            <CheckBox fx:id="canny" onAction="#cannySelected" text="Edge Detection" />
+           	<Label text="Canny Threshold"/>
+            <Slider fx:id="threshold" disable="true"/>
+          </children>
+        </HBox>
+        <Separator prefWidth="200.0" />
+        <HBox prefHeight="100.0" prefWidth="200.0">
+          <children>
+            <CheckBox fx:id="dilatedErode" onAction="#dilateErodeSelected" text="Background Removal" />
+            <CheckBox fx:id="inverse" text="Invert" disable="true" />
+          </children>
+        </HBox>
+        <Separator prefWidth="200.0" />
+      </children>
+    </VBox>
+  </top>
+</BorderPane>
