@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<BorderPane maxHeight="-1.0" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="application.DTFController">
+  <bottom>
+    <HBox alignment="CENTER" fillHeight="true" prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+      <children>
+        <Button onAction="#loadImage" text="Load Image">
+          <HBox.margin>
+            <Insets left="5.0" right="5.0" fx:id="x1" />
+          </HBox.margin>
+        </Button>
+        <Button fx:id="transformButton" disable="true" mnemonicParsing="false" onAction="#transformImage" text="Apply Transformation" HBox.margin="$x1" />
+        <Button fx:id="antitransformButton" disable="true" mnemonicParsing="false" onAction="#antitransformImage" text="Apply anti transformation" HBox.margin="$x1" />
+      </children>
+    </HBox>
+  </bottom>
+  <left>
+    <VBox prefHeight="200.0" prefWidth="100.0">
+      <children>
+        <ImageView id="" fx:id="originalImage" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
+      </children>
+    </VBox>
+  </left>
+  <right>
+    <VBox prefHeight="200.0" prefWidth="100.0">
+      <children>
+        <ImageView id="" fx:id="transformedImage" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
+        <ImageView id="" fx:id="antitransformedImage" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
+      </children>
+    </VBox>
+  </right>
+</BorderPane>
