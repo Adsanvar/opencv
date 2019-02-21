@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.*?>
+
+<BorderPane prefHeight="555.0" prefWidth="638.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="application.FXController">
+  <!-- TODO Add Nodes -->
+<!--
+   <center>
+    <ImageView fx:id="cameraImageView" fitHeight="236.75" fitWidth="315.66666666666663" pickOnBounds="true" preserveRatio="true" />
+  </center>
+
+  <bottom>
+      <Button fx:id="startCameraBtn" alignment="CENTER" contentDisplay="LEFT" mnemonicParsing="false" onAction="#StartCamera" text="Start Camera" textAlignment="CENTER" wrapText="false" BorderPane.alignment="CENTER">
+     <font>
+        <Font size="24.0" />
+      </font>
+      <BorderPane.margin>
+        <Insets bottom="20.0" />
+      </BorderPane.margin>
+    </Button>
+  </bottom>
+-->
+
+<center>
+	   <ImageView fx:id="currentFrame" />
+   </center>
+   <right>
+      <VBox alignment="CENTER_LEFT" spacing="10">
+         <padding>
+            <Insets left="10" right="20"/>
+         </padding>
+         <ImageView fx:id="histogram" />
+         <Text text="Controls" />
+         <CheckBox fx:id="grayscale" text="Show in gray scale" />
+         <CheckBox fx:id="logoCheckBox" text="Show logo" onAction="#loadLogo" />
+      </VBox>
+   </right>
+   <bottom>
+      <HBox alignment="CENTER" >
+         <padding>
+            <Insets top="25" right="25" bottom="25" left="25"/>
+         </padding>
+         <Button fx:id="button" alignment="center" text="Start camera" onAction="#startCamera" />
+      </HBox>
+   </bottom>
+
+
+
+
+
+</BorderPane>
