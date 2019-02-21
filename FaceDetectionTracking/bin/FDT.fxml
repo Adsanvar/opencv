@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+
+<BorderPane prefHeight="200.0" prefWidth="200.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="application.FDTController">
+  <bottom>
+    <Button fx:id="cameraButton" disable="true" mnemonicParsing="false" onAction="#startCamera" text="Start Camera" BorderPane.alignment="CENTER">
+      <BorderPane.margin>
+        <Insets bottom="25.0" />
+      </BorderPane.margin>
+    </Button>
+  </bottom>
+  <center>
+    <ImageView fx:id="originalFrame" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
+  </center>
+  <top>
+    <VBox prefHeight="200.0" prefWidth="100.0">
+      <children>
+        <HBox prefHeight="100.0" prefWidth="200.0">
+          <children>
+            <CheckBox fx:id="haarClassifier" mnemonicParsing="false" onAction="#haarSelected" text="Haar Classifier" />
+            <CheckBox fx:id="lbpClassifier" mnemonicParsing="false" onAction="#lbpSelected" text="LBP Classifier">
+              <HBox.margin>
+                <Insets left="5.0" />
+              </HBox.margin>
+            </CheckBox>
+          </children>
+        </HBox>
+        <Separator prefWidth="200.0" />
+      </children>
+    </VBox>
+  </top>
+</BorderPane>
